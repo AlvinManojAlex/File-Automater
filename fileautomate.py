@@ -1,4 +1,3 @@
-from configparser import ExtendedInterpolation
 import os
 import shutil
 from dotenv import load_dotenv
@@ -18,27 +17,49 @@ dest_doc = os.getenv("dest_docs")
 # dest_zip = src + "\\Zip"
 # dest_doc = src + "\\Documents"
 
-# print(os.path.splitext(os.listdir(src)[0]))
-
-# if os.path.exists(dest):
-#     print("directory exists")
-#     shutil.move(src, dest)
-# else:
-#     os.makedirs(dest)
-#     print("New directory made")
-#     shutil.move(src, dest)
-
 for file in os.listdir(src):
     extension = os.path.splitext(file)[1]
     if extension == ".exe" or extension == ".msi":
-        print(file + " is an installation")
+        if not os.path.exists(dest_exe):
+            os.makedirs(dest_exe)
+        if not os.path.exists(dest_exe+"\\"+file):
+            shutil.move(src+"\\"+file, dest_exe)
+        else:
+            os.remove(dest_exe+"\\"+file)
+            shutil.move(src+"\\"+file, dest_exe)
+
     elif extension == ".mp4" or extension == ".avi" or extension == ".mov" or extension == ".mp3":
-        print(file + " is a media file")
+        if not os.path.exists(dest_media):
+            os.makedirs(dest_media)
+        if not os.path.exists(dest_media+"\\"+file):
+            shutil.move(src+"\\"+file, dest_media)
+        else:
+            os.remove(dest_media+"\\"+file)
+            shutil.move(src+"\\"+file, dest_media)
+
     elif extension == ".jpg" or extension == ".png" or extension == ".svg":
-        print(file + " is an image file")
+        if not os.path.exists(dest_img):
+            os.makedirs(dest_img)
+        if not os.path.exists(dest_img+"\\"+file):
+            shutil.move(src+"\\"+file, dest_img)
+        else:
+            os.remove(dest_img+"\\"+file)
+            shutil.move(src+"\\"+file, dest_img)
+
     elif extension == ".pdf" or extension == ".doc" or extension == ".docx" or extension == ".ppt" or extension == ".pptx":
-        print(file + " is a document")
+        if not os.path.exists(dest_doc):
+            os.makedirs(dest_doc)
+        if not os.path.exists(dest_doc+"\\"+file):
+            shutil.move(src+"\\"+file, dest_doc)
+        else:
+            os.remove(dest_doc+"\\"+file)
+            shutil.move(src+"\\"+file, dest_doc)
+
     elif extension == ".7z" or extension == ".zip":
-        print(file + " is a zipped file")
-
-
+        if not os.path.exists(dest_zip):
+            os.makedirs(dest_zip)
+        if not os.path.exists(dest_zip+"\\"+file):
+            shutil.move(src+"\\"+file, dest_zip)
+        else:
+            os.remove(dest_zip+"\\"+file)
+            shutil.move(src+"\\"+file, dest_zip)
