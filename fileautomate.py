@@ -1,21 +1,12 @@
 import os
 import shutil
-from dotenv import load_dotenv
-load_dotenv()
 
-src = os.getenv("src_path")
-dest_media = os.getenv("dest_media")
-dest_img = os.getenv("dest_img")
-dest_exe = os.getenv("dest_exe")
-dest_zip = os.getenv("dest_zip")
-dest_doc = os.getenv("dest_docs")
-
-# src = r""
-# dest_media = src +"\\Media_files"
-# dest_exe = src + "\\Installation_Files"
-# dest_img = src + "\\Image_Files"
-# dest_zip = src + "\\Zip"
-# dest_doc = src + "\\Documents"
+src = r""                                   #Put full path of your Downloads folder
+dest_media = src +"\\Media_files"
+dest_exe = src + "\\Installation_Files"
+dest_img = src + "\\Image_Files"
+dest_zip = src + "\\Zip"
+dest_doc = src + "\\Documents"
 
 for file in os.listdir(src):
     extension = os.path.splitext(file)[1]
