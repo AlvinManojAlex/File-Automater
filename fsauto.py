@@ -1,7 +1,7 @@
 import os
 import shutil
 
-src = r"C:\\Users\\Alvin\\Downloads"        # Put full path of your Downloads folder
+src = r""        # Put full path of your Downloads folder
 dest_media = src +"\\Media_files"
 dest_exe = src + "\\Installation_Files"
 dest_img = src + "\\Image_Files"
