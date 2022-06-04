@@ -11,6 +11,6 @@ This Python script allows a user to efficiently automate and store files in the 
 ## Some Helpful Tips
 
 1. Copy the directory location of the repository into PATH variables in your environment variables.
-2. Now you can run the program using the command line as `py fileautomate.py` 
+2. Now you can run the program using the command line as `py fsauto.py` 
 
 *(Note: Ensure you have put directory location to PATH)*
