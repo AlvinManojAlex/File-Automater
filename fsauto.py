@@ -37,7 +37,7 @@ for file in os.listdir(src):
             os.remove(dest_img+"\\"+file)
             shutil.move(src+"\\"+file, dest_img)
 
-    elif extension == ".pdf" or extension == ".doc" or extension == ".docx" or extension == ".ppt" or extension == ".pptx":
+    elif extension == ".pdf" or extension == ".doc" or extension == ".docx" or extension == ".ppt" or extension == ".pptx" or extension == ".xlsx":
         if not os.path.exists(dest_doc):
             os.makedirs(dest_doc)
         if not os.path.exists(dest_doc+"\\"+file):
