@@ -1,7 +1,8 @@
 import os
 import shutil
 
-src = r""        # Put full path of your Downloads folder
+# Put full path of your Downloads folder
+src = r""
 dest_media = src +"\\Media_files"
 dest_exe = src + "\\Installation_Files"
 dest_img = src + "\\Image_Files"
@@ -28,7 +29,7 @@ for file in os.listdir(src):
             os.remove(dest_media+"\\"+file)
             shutil.move(src+"\\"+file, dest_media)
 
-    elif extension == ".jpg" or extension == ".png" or extension == ".svg":
+    elif extension == ".jpg" or extension == ".png" or extension == ".svg" or extension == ".jpeg   ":
         if not os.path.exists(dest_img):
             os.makedirs(dest_img)
         if not os.path.exists(dest_img+"\\"+file):
